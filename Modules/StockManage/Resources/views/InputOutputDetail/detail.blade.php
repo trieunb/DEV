@@ -134,7 +134,7 @@
 					<div class="tooltip-overflow max-width20 DSP_specification" data-toggle="tooltip" data-placement="top" title=""></div>
 				</td>
 				<td class="text-left">
-					<input type="text" name="TXT_serial_no" class="form-control TXT_serial_no" value="" maxlength="7">
+					<input type="text" name="TXT_serial_no" class="form-control TXT_serial_no text-right numeric-only" value="" maxlength="7">
 					<span class="hide DSP_serial_management_div"></span>
 					<span class="hide DSP_stock_management_div"></span>
 				</td>

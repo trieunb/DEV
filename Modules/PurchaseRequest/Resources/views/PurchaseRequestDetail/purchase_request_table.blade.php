@@ -42,7 +42,7 @@
 				{{ $val['lib_val_nm_j'] or '' }}
 			</td>
 			<td class="text-center">
-				<input type="text" class="form-control money numeric TXT_buy_unit_price" value="{{ $val['buy_unit_price'] or '' }}" maxlength="12">
+				<input type="text" class="form-control price TXT_buy_unit_price" value="{{ $val['buy_unit_price'] or '' }}" maxlength="12">
 			</td>
 			<td class="text-center">
 				<input type="text" class="form-control money numeric TXT_buy_detail_amt" disabled="true" value="{{ $val['buy_detail_amt'] or '' }}" maxlength="12">

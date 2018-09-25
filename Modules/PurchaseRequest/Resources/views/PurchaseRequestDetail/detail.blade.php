@@ -148,7 +148,7 @@
 				<td class="text-center text-right DSP_unit">
 				</td>
 				<td class="text-center">
-					<input type="text" class="form-control money numeric TXT_buy_unit_price" value="" maxlength="12">
+					<input type="text" class="form-control price TXT_buy_unit_price" value="" maxlength="12">
 				</td>
 				<td class="text-center">
 					<input type="text" class="form-control money TXT_buy_detail_amt" disabled="true" value="" maxlength="12">

@@ -14,4 +14,5 @@ Route::group(['middleware' => ['web', 'authUserDefine'], 'prefix' => 'purchase-r
     Route::get('/purchase-request-search',          'PurchaseRequestSearchController@getSearch'  )->name(isset(FUNCTION_CD['purchase-request-search']['view']) ? FUNCTION_CD['purchase-request-search']['view'] : '');
     Route::post('/purchase-request-search/search',  'PurchaseRequestSearchController@postSearch' )->name(isset(FUNCTION_CD['purchase-request-search']['search']) ? FUNCTION_CD['purchase-request-search']['search'] : '');
     Route::post('/purchase-request-search/approve', 'PurchaseRequestSearchController@postApprove')->name(isset(FUNCTION_CD['purchase-request-search']['approve']) ? FUNCTION_CD['purchase-request-search']['approve'] : '');
+    Route::post('/purchase-request-detail/refer-supplier',  'PurchaseRequestDetailController@postReferSupplier' )->name(isset(FUNCTION_CD['purchase-request-detail']['refer-supplier']) ? FUNCTION_CD['purchase-request-detail']['refer-supplier'] : '');
 });

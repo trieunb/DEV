@@ -35,7 +35,7 @@
 				<div class="tooltip-overflow max-width20" data-toggle="tooltip" data-placement="top" title="{{ $val['specification'] }}">{{ $val['specification'] }}</div>
 			</td>
 			<td class="text-left">
-				<input type="text" name="TXT_serial_no" class="form-control TXT_serial_no" maxlength="7" value="{{ $val['serial_no'] }}" @if ($val['serial_management_div'] == '0' || $val['serial_management_div'] == '') disabled="disabled" @endif>
+				<input type="text" name="TXT_serial_no" class="form-control TXT_serial_no text-right numeric-only" maxlength="7" value="{{ $val['serial_no'] }}" @if ($val['serial_management_div'] == '0' || $val['serial_management_div'] == '') disabled="disabled" @endif>
 				<span class="hide DSP_serial_management_div">{{ $val['serial_management_div'] }}</span>
 				<span class="hide DSP_stock_management_div">{{ $val['stock_management_div'] }}</span>
 			</td>

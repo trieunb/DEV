@@ -147,6 +147,10 @@ class InputOutputSearchController extends Controller {
                     'error_cd' => 'E751'
                 ));
             }
+            //format serial item
+            /*foreach($dataInput as $key => $value){
+                $dataInput[$key][9] = str_pad($value[9],7,"0",STR_PAD_LEFT);
+            }*/
             //check conent file
             $checkContentFile = $this->checkContentFile($dataInput);
             //data to json
@@ -290,7 +294,15 @@ class InputOutputSearchController extends Controller {
                     $temp     = array('row_no' => $lineNo, 'item_err' => $itemName, 'msg_err' => $msgErr);
                     array_push($this->error,$temp);
                 }
-
+                //check numeric only serial item
+                if (trim($row[$serial]) != "" && (preg_match('#[^0-9]#', $row[$serial]))) {
+                    $flag     = false;
+                    $lineNo   = $key + 1;
+                    $itemName = $this->colNameList[$serial];
+                    $msgErr   = 'シリアル番号は数字だけ入力してください。';
+                    $temp     = array('row_no' => $lineNo, 'item_err' => $itemName, 'msg_err' => $msgErr);
+                    array_push($this->error,$temp);
+                }
                 //Check duplicate key
                 // if ($key + 1 <= $countData) {
                 //     for ($i = $key + 1; $i <= $countData; $i++) { 

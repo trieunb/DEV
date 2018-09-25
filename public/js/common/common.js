@@ -960,7 +960,7 @@ function initControls() {
 	 * @author: KienNT - 2017/02/23
 	 * @reason: init for numeric control (decimal) example numeric(5,2)
 	 */
-	$(document).on('keydown', '.money, .price, .weight', function(event){
+	$(document).on('keydown', '.money, .price, .weight, .numeric-only', function(event){
 		//var ctrlDown = event.ctrlKey||event.metaKey; // Mac support
 		// var current = $('.currency_div').val();
 		// if (current == 'JPY' && event.keyCode == 110 && ($(this).hasClass('money') || $(this).hasClass('price')) ) {
@@ -1027,7 +1027,7 @@ function initControls() {
 			event.preventDefault();
 	});
 
-	$(document).on('keypress','.money, .price, .quantity, .weight, .measure',function(event) {
+	$(document).on('keypress','.money, .price, .quantity, .weight, .measure, .numeric-only',function(event) {
         // debugger;
 		var $this = $(this);
 		// var decimal_len = (typeof $this.attr('decimal_len') === 'undefined')?0:(1*$this.attr('decimal_len'));
@@ -1428,6 +1428,16 @@ function initControls() {
 		data.search = $(this).data('search');
 		parent.addClass('popup-'+ data.search);
 		showPopup('/popup/changePassword/index?' + _setGetPrams(data), function(){}, '65%', '55%');
+	});
+	$(document).on('keypress', '.numeric-only', function(event) {
+	   	var $this   = $(this);
+	   	var negative  = (typeof $this.attr('negative') === 'undefined')?0:(1*$this.attr('negative'));
+	   	var text   = $(this).val();
+	    if((negative != 1 || text.indexOf('-') > -1) && (event.which == 45) || (event.which == 46)) {
+	    	event.preventDefault();
+	    } else if(text.indexOf('-')==-1 && event.which==45 && negative==1) {
+            $this.val('-'+text);
+        }
 	});
 	/*********************************************END REGION**********************************************/
 
@@ -2542,7 +2552,8 @@ function _changeNmCombobox(country_div, obj) {
  		} else {
  			num = num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
  		}
- 		return (num != 0) ? num : '';
+ 		/*return (num != 0) ? num : '';*/
+ 		return num;
  	} catch (e) {
         alert('_convertMoneyToIntAndContra' + e.message);
     }

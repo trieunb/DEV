@@ -269,4 +269,36 @@ class PurchaseRequestDetailController extends Controller
                     ));
         }
     }
+    /**
+     * refer Supplier
+     * -----------------------------------------------
+     * @author      :   ANS804 - 2018/03/26 - create
+     * @param       :
+     * @return      :   mixed
+     * @access      :   public
+     * @see         :   remark
+     */
+    public function postReferSupplier(Request $request) {
+        try {
+            $param = $request->all();
+            
+            $sql   = "SPC_031_PURCHASE_REQUEST_DETAIL_INQ3"; 
+            $data  = Dao::call_stored_procedure($sql,$param);
+            
+            if (!empty($data)) {
+                return response()->json(array(
+                    'response'  =>  true,
+                    'data'      =>  $data[0][0])
+                );
+            } else {
+                return response()->json(array(
+                    'response'  => false
+                ));
+            }
+        } catch (\Exception $e) {
+            return response()->json(array(
+                'response'=> false
+            ));
+        }     
+    }
 }
