@@ -1,0 +1,16 @@
+{
+    "name": "SystemManagement",
+    "alias": "systemmanagement",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\SystemManagement\\Providers\\SystemManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

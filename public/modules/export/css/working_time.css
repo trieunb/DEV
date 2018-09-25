@@ -1,0 +1,11 @@
+thead>tr.boder{
+	background-color: #248af0;
+	border:1px solid #000000;
+	color: #ffffff;
+}
+tr.boder td{
+    border:1px solid #000000;
+}
+tr.boder:nth-child(even) td {
+    background-color: #FFF2CC;
+}

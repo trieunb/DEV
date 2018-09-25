@@ -1,0 +1,13 @@
+.col-md-1-cus {
+	width: 12%;
+}
+.w-40px {
+	width: 40px;
+}
+table.table.table-total tr td {
+    border-top: none;
+    padding: 5px 0;
+}
+.table-responsive {
+    max-height: 100% !important;
+}

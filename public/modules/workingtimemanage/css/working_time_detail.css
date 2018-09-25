@@ -1,0 +1,18 @@
+.col-md-1-cus {
+	width: 12%;
+}
+.w-40px {
+	width: 40px;
+}
+.input-group-select {
+	width: 120px;
+    display: inline-flex;
+    line-height: 25px;
+}
+.select-group-wrk {
+	width: 80px !important; 
+	margin-right: 5px
+}
+.max-width20{
+	max-width: 20px;
+}

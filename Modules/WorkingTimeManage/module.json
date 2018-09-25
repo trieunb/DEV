@@ -1,0 +1,16 @@
+{
+    "name": "WorkingTimeManage",
+    "alias": "workingtimemanage",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\WorkingTimeManage\\Providers\\WorkingTimeManageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

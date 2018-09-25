@@ -1,0 +1,27 @@
+.col-md-1-cus {
+	width: 12%;
+}
+.w-40px {
+	width: 40px;
+}
+.table-hover > tbody > tr:hover {
+    background-color: #dddddd !important;
+}
+@media screen and (max-width: 1280px) and (min-width: 1025px){
+	.table-master-tab2 {
+		padding-left: 15px !important;
+	}
+}
+.max-width20{
+	max-width: 20px;
+}
+.tabError {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.6),rgba(246,151,163,0.2));
+    border: 1px solid #ddd !important;
+}
+.nav-tabs-component li.active a {
+    font-weight: bold;
+}
+.popup input[type=text] {
+    min-width: 80px !important;
+}

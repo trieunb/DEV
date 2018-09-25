@@ -1,0 +1,12 @@
+.max-width90 {
+    max-width: 90px;
+}
+.max-width130 {
+    max-width: 130px;
+}
+.max-width150 {
+    max-width: 150px;
+}
+tr.background-choice {
+	background: #dddddd !important;
+}

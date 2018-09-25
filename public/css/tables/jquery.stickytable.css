@@ -1,0 +1,40 @@
+.sticky-table {
+    max-width: 100%;
+    max-height: 80vh;
+    overflow: auto;
+    padding: 0 !important;
+    /*outline: 1px solid #ddd;*/
+}
+
+.sticky-table table {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+}
+.sticky-table table tr th,.sticky-table table tr td{
+    outline: 1px solid #ddd;
+}
+
+.sticky-table{
+    outline: 1px solid #ddd;
+}
+
+.sticky-table table tr.sticky-row th{
+    background-color: #248af0;
+    border-top: 0;
+    position: relative;
+    /*outline: 1px solid #ddd;*/
+    z-index: 5;
+}
+
+.sticky-table table td.sticky-cell {
+    background-color: white;
+    /*outline: 1px solid #ddd;*/
+    position: relative;
+    z-index: 10;
+}
+
+.sticky-table table tr.sticky-row td.sticky-cell, .sticky-table table tr.sticky-row th.sticky-cell {
+    z-index: 15;
+}

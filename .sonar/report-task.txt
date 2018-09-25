@@ -1,0 +1,6 @@
+projectKey=Apel:project
+serverUrl=http://localhost:4950
+serverVersion=6.7.2.37468
+dashboardUrl=http://localhost:4950/dashboard/index/Apel:project
+ceTaskId=AWJCDIxt30XF_DBBIuwE
+ceTaskUrl=http://localhost:4950/api/ce/task?id=AWJCDIxt30XF_DBBIuwE

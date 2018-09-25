@@ -1,0 +1,16 @@
+{
+    "name": "Popup",
+    "alias": "popup",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Popup\\Providers\\PopupServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

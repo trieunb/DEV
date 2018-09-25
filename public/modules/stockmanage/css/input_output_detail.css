@@ -1,0 +1,13 @@
+.col-md-1-cus {
+	width: 12%;
+}
+.w-40px {
+	width: 40px;
+}
+.max-width20{
+	max-width: 20px;
+}
+.popup input[type=text].componentproduct_cd  {
+	width: 100px !important;
+	min-width: 100px !important;
+}

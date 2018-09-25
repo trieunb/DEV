@@ -1,0 +1,83 @@
+.col-md-1-cus {
+    width: 12%;
+}
+.w-40px {
+    width: 40px;
+}
+.bg-orange {
+	background-color: #faa732 !important;
+}
+.line-height {
+	border: 2px solid #ddd;
+    position: absolute;
+    line-height: 25px;
+    height: 25px;
+    top: 10px;
+}
+.panel-body.body-header {
+    background-color: #dedede;
+    padding: 10px 0 10px 20px;
+}
+.panel-body.body-top {
+    background-color: #f1efef;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.col-green {
+    color: #2196f3;
+}
+button.remove-row:hover {
+	color: #FFFFFF;
+}
+.panel-body.body-payment {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.panel-body.body-table-second {
+    padding-bottom: 0px;
+}
+/*.table-result tr td, .table-result  tr th {
+    border: 1px solid #248af0 !important;
+}
+.col-md-10.col-md-offset-1 {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}*/
+label.control-label.text-bold {
+    padding-right: 0;
+    padding-left: 0;
+}
+.panel-body.body-table-invoice {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.area-bottom {
+    padding-top: 0px;
+}
+.panel-body.table-shipment-hidden {
+    padding-top: 0px;
+}
+.table-responsive.table-shipment-responsive {
+    margin-top: 0;
+}
+input.form-control.text-right.bg-orange {
+    background-color: #53a2f1 !important;
+    color: #FFFFFF;
+}
+.input-city-popup {
+    /*padding-top: 2px;*/
+    /*height: 27px;*/
+    /*margin-top: -25px;*/
+}
+input.refer-search.city_id {
+    width: 120px;
+}
+.max-width20{
+    max-width: 20px;
+}
+input.form-control.TXT_product_cd {
+    min-width: 80px !important;
+}
+.DSP_pi_no {
+    height: 15px;
+}

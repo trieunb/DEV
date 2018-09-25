@@ -1,0 +1,16 @@
+{
+    "name": "ManufacturingCompletionProcess",
+    "alias": "manufacturingcompletionprocess",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ManufacturingCompletionProcess\\Providers\\ManufacturingCompletionProcessServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

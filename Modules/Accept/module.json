@@ -1,0 +1,16 @@
+{
+    "name": "Accept",
+    "alias": "accept",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Accept\\Providers\\AcceptServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

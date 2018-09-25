@@ -1,0 +1,16 @@
+{
+    "name": "Deposit",
+    "alias": "deposit",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Deposit\\Providers\\DepositServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

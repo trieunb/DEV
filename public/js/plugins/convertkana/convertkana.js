@@ -1,0 +1,264 @@
+/**
+ * Convert "Kana" one from another
+ * (zen-kaku, han-kaku and more)
+ *
+ * @param string str
+ * @param string option (optionaly)
+ * @return string converted string
+ */
+function convert_kana (str, option) {
+    option = option || "KV";
+    if (option.match('K')) {
+        if (option.match('V')) {
+            // han-kaku katakana (with daku-ten) to zen-kaku kata-kana
+            str = str.replace(/([\uff66\uff73\uff76-\uff84\uff8a-\uff8e\uff9c])\uff9e/g, function(m, c){
+                var f = {
+                    0xff76:0x30ac, 0xff77:0x30ae, 0xff78:0x30b0, 0xff79:0x30b2, 0xff7a:0x30b4,
+                    0xff7b:0x30b6, 0xff7c:0x30b8, 0xff7d:0x30ba, 0xff7e:0x30bc, 0xff7f:0x30be,
+                    0xff80:0x30c0, 0xff81:0x30c2, 0xff82:0x30c5, 0xff83:0x30c7, 0xff84:0x30c9,
+                    0xff8a:0x30d0, 0xff8b:0x30d3, 0xff8c:0x30d6, 0xff8d:0x30d9, 0xff8e:0x30dc,
+                    0xff73:0x30f4, 0xff9c:0x30f7, 0xff66:0x30fa
+                };
+                return String.fromCharCode(f[c.charCodeAt(c)]);
+            })
+            .replace(/([\uff8a-\uff8e])\uff9f/g, function(m, c){
+                var f = {
+                    0xff8a:0x30d1, 0xff8b:0x30d4, 0xff8c:0x30d7, 0xff8d:0x30da, 0xff8e:0x30dd
+                };
+                return String.fromCharCode(f[c.charCodeAt(c)]);
+            });
+        }
+        // han-kaku kata-kana to zen-kaku kata-kana
+        str = str.replace(/[\uff61-\uff9d]/g, function(c){
+            var m = {
+                0xff61:0x3002, 0xff62:0x300c, 0xff63:0x300d, 0xff64:0x3001, 0xff65:0x30fb,
+                0xff66:0x30f2, 0xff67:0x30a1, 0xff68:0x30a3, 0xff69:0x30a5, 0xff6a:0x30a7,
+                0xff6b:0x30a9, 0xff6c:0x30e3, 0xff6d:0x30e5, 0xff6e:0x30e7, 0xff6f:0x30c3,
+                0xff70:0x30fc, 0xff71:0x30a2, 0xff72:0x30a4, 0xff73:0x30a6, 0xff74:0x30a8,
+                0xff75:0x30aa, 0xff76:0x30ab, 0xff77:0x30ad, 0xff78:0x30af, 0xff79:0x30b1,
+                0xff7a:0x30b3, 0xff7b:0x30b5, 0xff7c:0x30b7, 0xff7d:0x30b9, 0xff7e:0x30bb,
+                0xff7f:0x30bd, 0xff80:0x30bf, 0xff81:0x30c1, 0xff82:0x30c4, 0xff83:0x30c6,
+                0xff84:0x30c8, 0xff85:0x30ca, 0xff86:0x30cb, 0xff87:0x30cc, 0xff88:0x30cd,
+                0xff89:0x30ce, 0xff8a:0x30cf, 0xff8b:0x30d2, 0xff8c:0x30d5, 0xff8d:0x30d8,
+                0xff8e:0x30db, 0xff8f:0x30de, 0xff90:0x30df, 0xff91:0x30e0, 0xff92:0x30e1,
+                0xff93:0x30e2, 0xff94:0x30e4, 0xff95:0x30e6, 0xff96:0x30e8, 0xff97:0x30e9,
+                0xff98:0x30ea, 0xff99:0x30eb, 0xff9a:0x30ec, 0xff9b:0x30ed, 0xff9c:0x30ef,
+                0xff9d:0x30f3
+            };
+            return String.fromCharCode(m[c.charCodeAt(0)]);
+        });
+    } else if (option.match('H')) {
+        if (option.match('V')) {
+            // han-kaku kata-kana (with daku-ten) to zen-kaku hira-gana
+            str = str.replace(/([\uff73\uff76-\uff84\uff8a-\uff8e])\uff9e/g, function(m, c){
+                var f = {
+                    0xff73:0x3094,
+                    0xff76:0x304c, 0xff77:0x304e, 0xff78:0x3050, 0xff79:0x3052, 0xff7a:0x3054,
+                    0xff7b:0x3056, 0xff7c:0x3058, 0xff7d:0x305a, 0xff7e:0x305c, 0xff7f:0x305e,
+                    0xff80:0x3060, 0xff81:0x3062, 0xff82:0x3065, 0xff83:0x3067, 0xff84:0x3069,
+                    0xff8a:0x3070, 0xff8b:0x3073, 0xff8c:0x3076, 0xff8d:0x3079, 0xff8e:0x307c
+                    //0xff9c:0x30f7, 0xff66:0x30fa // vwa vwo
+                };
+                return String.fromCharCode(f[c.charCodeAt(c)]);
+            })
+            .replace(/([\uff8a-\uff8e])\uff9f/g, function(m, c){
+                var f = {
+                    0xff8a:0x3071, 0xff8b:0x3074, 0xff8c:0x3077, 0xff8d:0x307a, 0xff8e:0x307d
+                };
+                return String.fromCharCode(f[c.charCodeAt(c)]);
+            });
+        }
+        // han-kaku kata-kana to zen-kaku hira-gana
+        str = str.replace(/[\uff61-\uff9d]/g, function(c){
+            var f = {
+                0xff61:0x3002, 0xff62:0x300c, 0xff63:0x300d, 0xff64:0x3001, 0xff65:0x30fb,
+                0xff66:0x3092, 0xff67:0x3041, 0xff68:0x3043, 0xff69:0x3045, 0xff6a:0x3047,
+                0xff6b:0x3049, 0xff6c:0x3083, 0xff6d:0x3085, 0xff6e:0x3087, 0xff6f:0x3063,
+                0xff70:0x30fc, 0xff71:0x3042, 0xff72:0x3044, 0xff73:0x3046, 0xff74:0x3048,
+                0xff75:0x304a, 0xff76:0x304b, 0xff77:0x304d, 0xff78:0x304f, 0xff79:0x3051,
+                0xff7a:0x3053, 0xff7b:0x3055, 0xff7c:0x3057, 0xff7d:0x3059, 0xff7e:0x305b,
+                0xff7f:0x305d, 0xff80:0x305f, 0xff81:0x3061, 0xff82:0x3064, 0xff83:0x3066,
+                0xff84:0x3068, 0xff85:0x306a, 0xff86:0x306b, 0xff87:0x306c, 0xff88:0x306d,
+                0xff89:0x306e, 0xff8a:0x306f, 0xff8b:0x3072, 0xff8c:0x3075, 0xff8d:0x3078,
+                0xff8e:0x307b, 0xff8f:0x307e, 0xff90:0x307f, 0xff91:0x3080, 0xff92:0x3081,
+                0xff93:0x3082, 0xff94:0x3084, 0xff95:0x3086, 0xff96:0x3088, 0xff97:0x3089,
+                0xff98:0x308a, 0xff99:0x308b, 0xff9a:0x308c, 0xff9b:0x308d, 0xff9c:0x308f,
+                0xff9d:0x3093
+            };
+            return String.fromCharCode(f[c.charCodeAt(0)]);
+        });
+    } else if (option.match('k')) {
+        // zen-kaku kata-kana to han-kaku kata-kana
+        str = str.replace(/[\u3001\u3002\u300c\u300d\u30a1-\u30ab\u30ad\u30af\u30b1\u30b3\u30b5\u30b7\u30b9\u30bb\u30bd\u30bf\u30c1\u30c3\u30c4\u30c6\u30c8\u30ca-\u30cf\u30d2\u30d5\u30d8\u30db\u30de\u30df-\u30ed\u30ef\u30f2\u30f3\u30fb]/g, function(c){
+            var f = {
+                0x3001:0xff64, 0x3002:0xff61, 0x300c:0xff62, 0x300d:0xff63, 0x30a1:0xff67,
+                0x30a2:0xff71, 0x30a3:0xff68, 0x30a4:0xff72, 0x30a5:0xff69, 0x30a6:0xff73,
+                0x30a7:0xff6a, 0x30a8:0xff74, 0x30a9:0xff6b, 0x30aa:0xff75, 0x30ab:0xff76,
+                0x30ad:0xff77, 0x30af:0xff78, 0x30b1:0xff79, 0x30b3:0xff7a, 0x30b5:0xff7b,
+                0x30b7:0xff7c, 0x30b9:0xff7d, 0x30bb:0xff7e, 0x30bd:0xff7f, 0x30bf:0xff80,
+                0x30c1:0xff81, 0x30c3:0xff6f, 0x30c4:0xff82, 0x30c6:0xff83, 0x30c8:0xff84,
+                0x30ca:0xff85, 0x30cb:0xff86, 0x30cc:0xff87, 0x30cd:0xff88, 0x30ce:0xff89,
+                0x30cf:0xff8a, 0x30d2:0xff8b, 0x30d5:0xff8c, 0x30d8:0xff8d, 0x30db:0xff8e,
+                0x30de:0xff8f, 0x30df:0xff90, 0x30e0:0xff91, 0x30e1:0xff92, 0x30e2:0xff93,
+                0x30e3:0xff6c, 0x30e4:0xff94, 0x30e5:0xff6d, 0x30e6:0xff95, 0x30e7:0xff6e,
+                0x30e8:0xff96, 0x30e9:0xff97, 0x30ea:0xff98, 0x30eb:0xff99, 0x30ec:0xff9a,
+                0x30ed:0xff9b, 0x30ef:0xff9c, 0x30f2:0xff66, 0x30f3:0xff9d, 0x30fb:0xff65
+            };
+            return String.fromCharCode(f[c.charCodeAt(0)]);
+        }).replace(/[\u30ac\u30ae\u30b0\u30b2\u30b4\u30b6\u30b8\u30ba\u30bc\u30be\u30c0\u30c2\u30c5\u30c7\u30c9\u30d0\u30d3\u30d6\u30d9\u30dc\u30f4\u30f7\u30fa]/g, function(c){
+            // with daku-ten
+            var f = {
+                0x30ac:0xff76, 0x30ae:0xff77, 0x30b0:0xff78, 0x30b2:0xff79, 0x30b4:0xff7a,
+                0x30b6:0xff7b, 0x30b8:0xff7c, 0x30ba:0xff7d, 0x30bc:0xff7e, 0x30be:0xff7f,
+                0x30c0:0xff80, 0x30c2:0xff81, 0x30c5:0xff82, 0x30c7:0xff83, 0x30c9:0xff84,
+                0x30d0:0xff8a, 0x30d3:0xff8b, 0x30d6:0xff8c, 0x30d9:0xff8d, 0x30dc:0xff8e,
+                0x30f4:0xff73, 0x30f7:0xff9c, 0x30fa:0xff66
+            }
+            return String.fromCharCode(f[c.charCodeAt(0)]) + "\uff9e";
+        }).replace(/[\u30d1\u30d4\u30d7\u30da\u30dd]/g, function(c){
+            // with han-daku-ten
+            var f = {
+                0x30d1:0xff8a, 0x30d4:0xff8b, 0x30d7:0xff8c, 0x30da:0xff8d, 0x30dd:0xff8e
+            }
+            return String.fromCharCode(f[c.charCodeAt(0)]) + "\uff9f";
+        });
+    }  else if (option.match('h')) {
+        // zen-kaku hira-gana to han-kaku kata-kana
+        str = str.replace(/[\u3001\u3002\u300c\u300d\u3041-\u304b\u304d\u304f\u3051\u3053\u3055\u3057\u3059\u305b\u305d\u305f\u3061\u3063\u3064\u3066\u3068\u306a-\u306f\u3072\u3075\u3078\u307b\u307e\u307f-\u308d\u308f\u3092\u3093\u30fb]/g, function(c){
+            var f = {
+                0x3001:0xff64, 0x3002:0xff61, 0x300c:0xff62, 0x300d:0xff63, 0x3041:0xff67,
+                0x3042:0xff71, 0x3043:0xff68, 0x3044:0xff72, 0x3045:0xff69, 0x3046:0xff73,
+                0x3047:0xff6a, 0x3048:0xff74, 0x3049:0xff6b, 0x304a:0xff75, 0x304b:0xff76,
+                0x304d:0xff77, 0x304f:0xff78, 0x3051:0xff79, 0x3053:0xff7a, 0x3055:0xff7b,
+                0x3057:0xff7c, 0x3059:0xff7d, 0x305b:0xff7e, 0x305d:0xff7f, 0x305f:0xff80,
+                0x3061:0xff81, 0x3063:0xff6f, 0x3064:0xff82, 0x3066:0xff83, 0x3068:0xff84,
+                0x306a:0xff85, 0x306b:0xff86, 0x306c:0xff87, 0x306d:0xff88, 0x306e:0xff89,
+                0x306f:0xff8a, 0x3072:0xff8b, 0x3075:0xff8c, 0x3078:0xff8d, 0x307b:0xff8e,
+                0x307e:0xff8f, 0x307f:0xff90, 0x3080:0xff91, 0x3081:0xff92, 0x3082:0xff93,
+                0x3083:0xff6c, 0x3084:0xff94, 0x3085:0xff6d, 0x3086:0xff95, 0x3087:0xff6e,
+                0x3088:0xff96, 0x3089:0xff97, 0x308a:0xff98, 0x308b:0xff99, 0x308c:0xff9a,
+                0x308d:0xff9b, 0x308f:0xff9c, 0x3092:0xff66, 0x3093:0xff9d, 0x30fb:0xff65
+            };
+            return String.fromCharCode(f[c.charCodeAt(0)]);
+        }).replace(/[\u304c\u304e\u3050\u3052\u3054\u3056\u3058\u305a\u305c\u305e\u3060\u3062\u3065\u3067\u3069\u3070\u3073\u3076\u3079\u307c\u3094]/g, function(c){
+            // with daku-ten
+            var f = {
+                0x304c:0xff76, 0x304e:0xff77, 0x3050:0xff78, 0x3052:0xff79, 0x3054:0xff7a,
+                0x3056:0xff7b, 0x3058:0xff7c, 0x305a:0xff7d, 0x305c:0xff7e, 0x305e:0xff7f,
+                0x3060:0xff80, 0x3062:0xff81, 0x3065:0xff82, 0x3067:0xff83, 0x3069:0xff84,
+                0x3070:0xff8a, 0x3073:0xff8b, 0x3076:0xff8c, 0x3079:0xff8d, 0x307c:0xff8e,
+                0x3094:0xff73
+            };
+            return String.fromCharCode(f[c.charCodeAt(0)]) + "\uff9e";
+        }).replace(/[\u3071\u3074\u3077\u307a\u307d]/g, function(c){
+            // with han-daku-ten
+            var f = {
+                0x3071:0xff8a, 0x3074:0xff8b, 0x3077:0xff8c, 0x307a:0xff8d, 0x307d:0xff8e
+            };
+            return String.fromCharCode(f[c.charCodeAt(0)]) + "\uff9f";
+        })
+        ;
+    }else if(option.match('hn')){
+    	var strReturn = convert_kana(str,'h');
+    	strReturn = convert_kana(strReturn,'n');
+    	return strReturn;
+    }
+    if (option.match('c')) {
+        // zen-kaku kata-kana to zen-kaku hira-gana
+        str = str.replace(/[\u30a1-\u30f6]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) - 0x0060)
+        });
+    } else if (option.match('C')) {
+        // zen-kaku hira-gana to zen-kaku kata-kana
+        str = str.replace(/[\u3041-\u3086]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) + 0x0060)
+        });
+    }
+    if (option.match('r')) {
+        // zen-kaku alphabets to han-kaku
+        str = str.replace(/[\uff21-\uff3a\uff41-\uff5a]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) - 0xFee0)
+        });
+    } else if (option.match('R')) {
+        // han-kaku alphabets to zen-kaku
+        str = str.replace(/[A-Za-z]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) + 0xFee0)
+        });
+    }
+    if (option.match('n')) {
+        // zen-kaku numbers to han-kaku
+        str = str.replace(/[\uff10-\uff19]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) - 0xfee0);
+        });
+    } else if (option.match('N')) {
+        // han-kaku numbers to zen-kaku
+        str = str.replace(/[\u0030-\u0039]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) + 0xfee0);
+        });
+    }
+    // Characters included in "a", "A" options are
+    // "!" - "~" excluding '"', "'", "\", "~"
+    if (option.match('a')) {
+        // zen-kaku alphabets and numbers to han-kaku
+        str = str.replace(/[\uff01\uff03-\uff06\uff08-\uff3b\uff3d-\uff5d]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) - 0xfee0);
+        });
+    } else if (option.match('A')) {
+        // han-kaku alphabets and numbers to zen-kaku
+        str = str.replace(/[\u0021\u0023-\u0026\u0028-\u005b\u005d-\u007d]/g, function(c){
+            return String.fromCharCode(c.charCodeAt(0) + 0xfee0);
+        });
+    }
+    if (option.match('s')) {
+        // zen-kaku space to han-kaku
+        str = str.replace(/\u0020/g, "\u3000");
+    } else if (option.match('S')) {
+        // han-kaku space to zen-kaku
+        str = str.replace(/\u3000/g, "\u0020");
+	}	else if (option.match('kn')) {
+			var strReturn = convert_kana(str,'k');
+			strReturn = convert_kana(strReturn,'n');
+			return strReturn;
+	}   else if (option.match('hk')) {
+    	var strReturn = convert_kana(str,'k');
+    	strReturn = convert_kana(strReturn,'h');
+    	strReturn = convert_kana(strReturn,'n');
+    	return strReturn;
+	}  
+    return str;
+}
+
+/**
+ * test
+ *
+var str = [
+    "　！”＃＄％＆’（）＊＋，－．／",
+    " !\"#$%&'()*+,-./",
+    "０１２３４５６７８９",
+    "0123456789",
+    "：；＜＝＞？＠",
+    ":;<=>?@",
+    "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ",
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "［￥］＾＿",
+    "[\\]^_",
+    "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ",
+    "abcdefghijklmnopqrstuvwxyz",
+    "｛｜｝～",
+    "{|}~",
+    "。「」、・をぁぃぅぇぉゃゅょっーあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわん",
+    "｡｢｣､･ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ",
+    "。「」、・ヲァィゥェォャュョッーアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン",
+    "がぎぐげござじずぜぞだぢづでどばびぶべぼゔヷヺぱぴぷぺぽ",
+    "ｶﾞｷﾞｸﾞｹﾞｺﾞｻﾞｼﾞｽﾞｾﾞｿﾞﾀﾞﾁﾞﾂﾞﾃﾞﾄﾞﾊﾞﾋﾞﾌﾞﾍﾞﾎﾞｳﾞﾜﾞｦﾞﾊﾟﾋﾟﾌﾟﾍﾟﾎﾟ",
+    "ガギグゲゴザジズゼゾダヂヅデドバビブベボヴヷヺパピプペポ"
+].join("\n");
+console.log(util.convert_kana(str, "sah"));
+console.log(util.convert_kana(str, "SAH"));
+console.log(util.convert_kana(str, "rnk"));
+console.log(util.convert_kana(str, "RNK"));
+console.log(util.convert_kana(str, "c"));
+console.log(util.convert_kana(str, "C"));
+console.log(util.convert_kana(str, "AV"));
+console.log(util.convert_kana(str, "KV"));
+//*/

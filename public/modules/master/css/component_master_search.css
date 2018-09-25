@@ -1,0 +1,12 @@
+.max-width20{
+	max-width: 120px;
+}
+.results tr.odd td {
+    background-color: #fff2cc;
+}
+.results tr.even td {
+    background-color: #fff;
+}
+.popup input[type=text] {
+    min-width: 80px !important;
+}

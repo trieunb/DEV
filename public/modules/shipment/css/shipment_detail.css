@@ -1,0 +1,28 @@
+.col-md-1-cus {
+	width: 12%;
+}
+.w-40px {
+	width: 40px;
+}
+.input-group-btn {
+  margin-left: 0px;
+}
+.error-e005{
+	background-color: #F697A3;
+    border: 1px solid #E5224C!important;
+}
+.popup-checklist{
+	display: inline-block;
+}
+textarea {
+    resize: none;
+}
+input[type="checkbox"].required {
+    outline: none; 
+}
+input[class="required error-item"].required {
+    outline: 1px solid red;
+}
+.max-width20 {
+    max-width: 60px;
+}

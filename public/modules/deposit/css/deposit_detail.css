@@ -1,0 +1,18 @@
+.col-md-1-cus {
+	width: 12%;
+}
+.w-40px {
+	width: 40px;
+}
+.max-width20{
+	max-width: 20px;
+}
+.error-numeric {
+    background-color: #F697A3 !important;
+    border: 1px solid red !important;
+    border-radius: 3px;
+}
+.lbl-numeric {
+	margin-left: 10px;
+	padding-right: 20px;
+}

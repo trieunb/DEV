@@ -1,0 +1,16 @@
+{
+    "name": "PI",
+    "alias": "pi",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\PI\\Providers\\PIServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

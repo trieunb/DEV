@@ -1,0 +1,9 @@
+.max-width20{
+  max-width: 80px;
+}
+.results tr.odd td {
+    background-color: #fff2cc;
+}
+.results tr.even td {
+    background-color: #fff;
+}

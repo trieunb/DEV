@@ -1,0 +1,26 @@
+.col-md-1-cus {
+	width: 17%;
+}
+.w-40px {
+	width: 40px;
+}
+.boder-address {
+	border: 1px solid #ddd;
+    padding: 10px 6px;
+}
+.panel-body.header-form-group {
+    padding-bottom: 0;
+}
+.panel-body.body-table {
+    padding-top: 0;
+}
+table.table-pi tbody tr {
+    height: 80px;
+}
+.popup input[type=text] {
+	min-width: 80px !important;
+}
+.error-numeric {
+    background-color: #F697A3 !important;
+    border: 1px solid red !important;
+}

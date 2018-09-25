@@ -1,0 +1,18 @@
+.max-width20 {
+	max-width: 100px;
+}
+.popup input[type=text] {
+    min-width: 80px !important;
+}
+.max-width-client-nm,
+.max-width-client-mail1,
+.max-width-client-url,
+.max-width-client-nm2 {
+    max-width: 222px;
+}
+.max-client-adr {
+    max-width: 160px;
+}
+.min-width-130 {
+    min-width: 130px;
+}

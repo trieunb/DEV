@@ -1,0 +1,29 @@
+/*tr.boder td,  tr.boder th:not(:first-child){
+        border:1px solid #000000;
+    }
+tr.boder-tr td{
+        border:1px solid #000000;
+    }
+tr.boder-tr-d td{
+        border-left:1px solid #000000;
+        border-right:1px solid #000000;
+    }*/
+.border-tr, .border-td {
+	border:1px solid #000000;
+}
+.border-tr-top, .border-td-top {
+	border-top:1px solid #000000;
+}
+.border-tr-bottom, .border-td-bottom {
+	border-bottom:1px solid #000000;
+}
+.border-td-left-right {
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+.border-td-left {
+	border-left: 1px solid #000000;
+}
+.border-td-right {
+	border-right: 1px solid #000000;
+}

@@ -1,0 +1,99 @@
+/* 
+*******************************************************************************
+* MANNET
+* jquery.alerts.css
+* 
+* 処理概要		:	css for dialog
+* 作成日			:	2015/09/23
+* 作成者			:	viettd – viettd@ans-asia.com
+* 
+* 更新日			:	
+* 更新者			:	
+* 更新内容		:	
+* 
+* @package		:	COMMON
+* @copyright	:	Copyright (c) ANS-ASIA
+* @version		:	1.0.0
+*******************************************************************************
+*/
+#popup_container {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	min-width: 350px; /* Dialog will be no smaller than this */
+	max-width: 580px; /* Dialog will wrap after this width */
+	display: block;
+    margin-top: -145px;
+    background-color: #fff;
+    width: 470px;
+    padding: 20px;
+    border-radius: 3px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -235px;
+    overflow: hidden;
+    z-index: 1060;
+}
+
+#popup_title {
+	margin-top: 0px;
+	font-weight: bold;
+}
+
+#popup_content button.btn:focus{
+	background:#c5c3c3;
+}
+
+#popup_icon {
+	background: 16px 16px no-repeat url(../images/pnotify/info.png);
+	height: 70px;
+    width: 70px;
+    margin: -5px auto;
+}
+
+#popup_icon.alert {
+	background: 16px 16px no-repeat url(../images/pnotify/info.png);
+}
+
+#popup_icon.confirm {
+	background: 16px 16px no-repeat url(../images/pnotify/question.png);
+}
+
+#popup_icon.info {
+	background: 16px 16px no-repeat url(../images/pnotify/info.png);
+}
+
+#popup_icon.success {
+	background: 16px 16px no-repeat url(../images/pnotify/success.png);
+}
+
+#popup_icon.warning {
+	background: 16px 16px no-repeat url(../images/pnotify/warning.png);
+}
+
+#popup_icon.error {
+	background: 16px 16px no-repeat url(../images/pnotify/danger.png);
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
+/*smartphone, tablet when screen size (width) < 768px */
+@media (max-width: 520px){
+	#popup_container{
+		max-width: inherit;
+	    min-width: inherit;
+		width: auto;
+	    margin-left: 0;
+	    margin-right: 0;
+	    left: 20px;
+	    right: 20px;
+}
+	}
+}

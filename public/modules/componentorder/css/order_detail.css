@@ -1,0 +1,32 @@
+.col-md-1-cus {
+	width: 17%;
+}
+.w-40px {
+	width: 40px;
+}
+.boder-address {
+	border: 1px solid #ddd;
+    padding: 10px 6px;
+}
+.TXT_parts_order_qty {
+	width: 100px;
+}
+.TXT_parts_order_unit_price {
+	width: 120px;
+}
+.TXT_parts_order_unit_amt {
+	width: 140px;
+}
+.mw-135px {
+	min-width: 135px;
+}
+.mw-115px {
+	min-width: 115px;
+}
+.error-numeric {
+    background-color: #F697A3 !important;
+    border: 1px solid red !important;
+}
+.DSP_specification {
+     padding-left: 0px; 
+}

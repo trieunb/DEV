@@ -1,0 +1,17 @@
+.col-md-1-cus {
+	width: 17%;
+}
+.w-40px {
+	width: 40px;
+}
+.boder-address {
+	border: 1px solid #ddd;
+    padding: 10px 6px;
+}
+.error-numeric {
+    background-color: #F697A3!important;
+    border: 1px solid red;
+}
+.popup input[type=text] {
+    min-width: 80px !important;
+}

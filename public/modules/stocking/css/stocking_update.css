@@ -1,0 +1,24 @@
+.max-width90 {
+    max-width: 90px;
+}
+.max-width130 {
+    max-width: 130px;
+}
+.max-width150 {
+    max-width: 150px;
+}
+tr.background-choice {
+	background: #dddddd !important;
+}
+.popup input[type=text]{
+	min-width: 80px !important;
+}
+.min-width80{
+	min-width: 80px;
+}
+.min-width150{
+	min-width: 150px;
+}
+.min-width163 {
+    min-width: 163px;
+}

@@ -1,0 +1,15 @@
+.max-width20{
+	max-width: 20px;
+}
+.results tr.odd td {
+    background-color: #fff2cc;
+}
+.results tr.even td {
+    background-color: #fff;
+}
+.max-width225{
+	max-width: 225px !important;
+}
+.max-width120{
+	max-width: 115px !important;
+}

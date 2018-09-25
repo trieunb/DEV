@@ -1,0 +1,16 @@
+{
+    "name": "ComponentOrder",
+    "alias": "componentorder",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ComponentOrder\\Providers\\ComponentOrderServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

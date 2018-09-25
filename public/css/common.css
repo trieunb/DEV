@@ -1,0 +1,393 @@
+/* ------------------------------------------------------------------------------
+ *
+ *  # Common css
+ *
+ *  Common less file with imports of plugins and pages
+ *
+ *  Version: 1.3
+ *  Latest update: 2017/01/08
+ *
+ * ---------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------
+ *
+ *  # Common
+ *
+ *  Common less file with imports of plugins and pages
+ *
+ *  Version: 1.0
+ *  Latest update: 2017/01/08
+ *
+ * ---------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------
+*
+*  # Utilites
+*
+*  Additional animations, transitions, transforms and other utilities
+*
+*  Version: 1.0
+*  Latest update: Mar 10, 2016
+*
+* ---------------------------------------------------------------------------- */
+input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) {
+    cursor: pointer;
+}
+input[type="radio"],input[type="checkbox"] {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    margin-top: 2px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    outline: 0;
+    background: #FFFFFF;
+}
+input[type="radio"] {
+    border-radius: 50%;
+}
+input[type=checkbox]:checked:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    line-height: 12px;
+    color: #00a8e6;
+}
+input[type=radio]:checked:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin: 2px auto 0;
+    border-radius: 50%;
+    background: #00a8e6;
+}
+input[type="checkbox"], input[type="radio"] {
+    padding: 0;
+}
+
+input[type=checkbox]:checked:before, input[type=radio]:checked:before {
+    display: block;
+}
+textarea {
+    resize: vertical;
+}
+textarea.disable-resize {
+    resize: none;
+}
+.pagination {
+    display: inline-block;
+}
+
+.pagination li button {
+    color: black;
+    float: left;
+    /*padding: 3px 4px;*/
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.pagination li button.active {
+    background-color: #248af0;
+    color: white;
+    border: 1px solid #248af0;
+}
+li.disabled span {
+    border: none;
+}
+.table-responsive {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.info-created {
+    display: inline-block;
+    float: right;
+    /*margin-right: 50px;*/
+}
+label.required {
+  color: red;
+}
+button.btn-add-row {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #FFFFFF;
+    padding-left: 7px;
+    background-color: #fff2cc;
+    color: #248af0;
+    display: inline-block;
+}
+button.btn-add-row:hover {
+    border: 2px solid #dddddd;
+}
+button.remove-row {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding-left: 7px;
+    display: inline-block;
+}
+.text-red {
+  color: red;
+}
+.text-bold {
+  font-weight: bold;
+  color: #2F3A3F;
+}
+.bg-group {
+    background-color: whitesmoke;
+}
+.text-right-input {
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+.group-input-popup {
+    display: inline-flex;
+}
+.table-list {
+    background-color: white;
+}
+.content {
+    padding: 0 20px 20px 20px;
+}
+.panel-body {
+    padding-bottom: 20px;
+}
+.drag-handler {
+    cursor: move;
+}
+.boder-line {
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    margin-left: -5px;
+    margin-right: -2px;
+}
+.navbar-nav-slide {
+    position: relative;
+    left: 10%;
+}
+.left.carousel-control, .right.carousel-control {
+    background-color: #ffffff;
+    background-image: none;
+    vertical-align: middle;
+    line-height: 50px;
+    color: #faa732;
+}
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.form-horizontal {
+    margin-bottom: 10px;
+}
+.pagination button:focus {
+    border: 1px solid #248af0 !important; 
+}
+.text-input-left {
+    float: left;
+    line-height: 25px;
+}
+table.table thead th i {
+    cursor: pointer;
+}
+.popup {
+    /*display: inline-block;*/
+}
+.navigation {
+    background-color: #fff;
+}
+.navigation > li ul li a {
+    padding: 10px 10px;
+    padding-left: 30px;
+    min-height: 40px;
+    border-bottom: solid 1px #ddd;
+}
+table.table-list tbody tr:nth-child(even) {
+    background: #FFF2CC !important;
+}
+table.table-list tbody tr:nth-child(even):hover {
+    background: #dddddd !important;
+}
+table.table-list tbody tr:nth-child(odd):hover {
+    background: #dddddd !important;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.boder-address {
+   border: 1px solid #ddd;
+   padding: 10px 25px;
+}
+.glyphicon-floppy-remove:before {
+    font-size: 12px;
+}
+
+
+@media (min-width: 769px) {
+    .sidebar-xs .sidebar-fixed.sidebar-main .sidebar-content {
+        width: 10px;
+    }
+    .sidebar-xs .sidebar-main {
+        width: 10px;
+    }
+    .navbar-nav {
+         margin-left: 5px; 
+    }
+    .sidebar {
+        width: 230px;
+    }
+    .sidebar-fixed .sidebar-content {
+        width: 230px;
+    }
+}
+.table thead th {
+    cursor: pointer;
+}
+.sticky-table {
+    max-height: none !important;
+}
+@media (min-width: 1024px) and  (max-width: 1259px){
+    .navbar-header {
+        display: none;
+    }
+}
+.tooltip-overflow{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.table th, .table tfoot{
+  white-space:nowrap;
+  font-size: 13px;
+}
+/*.table td{
+  vertical-align:top;
+  border-bottom: 1px solid #ddd;
+  padding: 2px 5px;  
+}*/
+
+.sticky-cell.th-last {
+    box-shadow: 4px 0px 0px 0px #ddd;
+}
+.sticky-cell.th-first {
+    border-left: 0px solid #ddd;
+}
+.results tr:nth-child(even) td {
+    background-color: #fff2cc;
+}
+.results tr:nth-child(odd) td {
+    background-color: #fff;
+}
+.table thead tr .th-date {
+    width: 3%;
+}
+.table-striped tbody tr .th-date {
+    padding: 0 10px;
+}
+.footer:not(.navbar-fixed-bottom) {
+    z-index: 0;
+}
+.popup-header {
+    padding-bottom: 0;
+}
+.popup-header-heading-elements {
+    height: 30px;
+    margin-top: -5px;
+}
+.popup-form-header {
+    min-height: 30px;
+}
+.popup-header {
+    padding-top: 0px;
+}
+.popup input[type=text] {
+    min-width: 160px !important;
+}
+.table-total tbody tr td {
+    height: 25px;
+}
+.number-date {
+    width: 45px;
+    text-align: right;
+}
+.pagi-fillter {
+    display: inline-block;
+    width: 300px;
+}
+.total-record {
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.input-group .form-control.right-radius {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.input-group-btn {
+    float: none;
+    margin-left: 0;
+}
+/*.form-control{
+    ime-mode: disabled;
+}*/
+.ime-active{
+    ime-mode: active !important;
+}
+.money, .price, .weight, .quantity, .measure {
+    text-align: right;
+}
+.percent {
+    width: 89%;
+    display: inline-block;
+    float: left;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+.warning-item {
+    background-color: #e6814a!important;
+    border: 1px solid #e6814a!important;
+}
+.show-text-overfollow{
+    overflow: visible !important;
+}
+.error_e005 {
+    background-color: #F697A3 !important;
+    border: 1px solid red !important;
+}
+#popup_container {
+    padding: 10px !important;
+}
+.input-group-text {
+    display: inline;
+    position: absolute;
+    top: 4px;
+}
+.specification {
+    padding-left: 30px;
+}
+.componentproduct_nm, .specification {
+    max-width: 400px
+}
+#contain-name {
+    position: absolute; 
+    top: 4px; 
+    display: flex; 
+    padding-left: 7px;
+}
+/*for IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   #contain-name {
+    position: static;
+}

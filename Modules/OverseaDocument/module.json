@@ -1,0 +1,16 @@
+{
+    "name": "OverseaDocument",
+    "alias": "overseadocument",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\OverseaDocument\\Providers\\OverseaDocumentServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

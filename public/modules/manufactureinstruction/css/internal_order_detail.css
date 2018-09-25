@@ -1,0 +1,25 @@
+.w-40px {
+	width: 40px;
+}
+.w-80px {
+	width: 80px;
+}
+.w-13 {
+	width: 12.5%;
+}
+.col-md-1-cus {
+	width: 12%;
+}
+.max-width20{
+	max-width: 20px;
+}
+.popup input[type=text].product_cd  {
+	width: 100px !important;
+	min-width: 100px !important;
+}
+.max-width30 {
+	max-width: 30px;
+}
+.popup input[type=text].internalorder_cd  {
+	min-width: 150px !important;
+}
