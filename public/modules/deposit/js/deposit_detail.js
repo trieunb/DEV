@@ -556,7 +556,7 @@ function calculateDepositYenAmt() {
 		var ctl_val = 3;
 		//set new DSP_deposit_yen_amt
 		// $('#DSP_deposit_yen_amt').html(addCommas(_roundNumeric(DSP_deposit_yen_amt, ctl_val)).replace('.00',''));
-		$('#DSP_deposit_yen_amt').html(addCommas(_roundNumeric(DSP_deposit_yen_amt, ctl_val, 0)).replace('.00',''));
+		$('#DSP_deposit_yen_amt').html(addCommas(_roundNumeric(DSP_deposit_yen_amt.toFixed(4), ctl_val, 0)).replace('.00',''));
 
 		validateDepositYenAmt();
 	} catch (e) {

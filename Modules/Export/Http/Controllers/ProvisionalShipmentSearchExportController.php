@@ -20,7 +20,7 @@ class ProvisionalShipmentSearchExportController extends Controller
     public $title           = 'Provisional Shipment';
     public $company         = 'Apel';
     public $description     = '仮出荷指示書_';
-    protected $totalLine    = '56';
+    protected $totalLine    = '52';
     /*
      * Header
      * @var array
@@ -251,7 +251,7 @@ class ProvisionalShipmentSearchExportController extends Controller
                                     // Vị trí mỗi page ( First postition of every page)
                                     $pos        =   0;
                                     // Sum height header and footer
-                                    $page_size  =   23;
+                                    $page_size  =   27;
                                     $pos_page  =   0;
                                     // pagination
                                     for ($i = 0; $i < count($data_pagi); $i++) {
@@ -259,7 +259,8 @@ class ProvisionalShipmentSearchExportController extends Controller
                                         if ($i == 0) {
                                             $pos    =   $i + 1;
                                         } else {
-                                            $pos    =   $pos + $pos_page + 1;
+                                            // $pos    =   $pos + $pos_page + 1;
+                                            $pos    =   $pos + ($page_size+count($data_pagi[$i-1])) + 1;
                                         }
 
                                         //create and format footer
@@ -591,12 +592,14 @@ class ProvisionalShipmentSearchExportController extends Controller
 
                                     });
 
-                                    $sheet->setCellValue('E'.$pos_consignee_tel_fax,  $header['consignee_tel']);
+                                    //$sheet->setCellValue('E'.$pos_consignee_tel_fax,  $header['consignee_tel']);
+                                    $sheet->getCell('E'.$pos_consignee_tel_fax)->setValueExplicit($header['consignee_tel'], \PHPExcel_Cell_DataType::TYPE_STRING);
                                     $sheet->mergeCells('E'.$pos_consignee_tel_fax.':I'.$pos_consignee_tel_fax);
                                     $sheet->cells('E'.$pos_consignee_tel_fax.':I'.$pos_consignee_tel_fax, function($cells) { 
                                         $cells->setAlignment('center');
                                         $cells->setValignment('center');   
                                     });
+                                    $sheet->getStyle('E'.$pos_consignee_tel_fax.':I'.$pos_consignee_tel_fax)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
 
                                     //FAX       
                                     $sheet->setCellValue('J'.$pos_consignee_tel_fax, 'FAX');
@@ -607,7 +610,8 @@ class ProvisionalShipmentSearchExportController extends Controller
                                     });
 
                                     $sheet->getStyle('L'.$pos_consignee_tel_fax.':Q'.$pos_consignee_tel_fax)->applyFromArray(getStyleExcel('styleAllBorderBol'));
-                                    $sheet->setCellValue('L'.$pos_consignee_tel_fax,  $header['consignee_fax']);
+                                    //$sheet->setCellValue('L'.$pos_consignee_tel_fax,  $header['consignee_fax']);
+                                    $sheet->getCell('L'.$pos_consignee_tel_fax)->setValueExplicit($header['consignee_fax'], \PHPExcel_Cell_DataType::TYPE_STRING);
                                     $sheet->mergeCells('L'.$pos_consignee_tel_fax.':Q'.$pos_consignee_tel_fax);
                                     $sheet->cells('L'.$pos_consignee_tel_fax.':Q'.$pos_consignee_tel_fax, function($cells) { 
                                         $cells->setAlignment('center');
@@ -615,7 +619,8 @@ class ProvisionalShipmentSearchExportController extends Controller
                                         $cells->setBorder('thin', 'medium', 'thin', 'thin', \PHPExcel_Style_Border::BORDER_MEDIUM);  
 
                                     });
-
+                                    $sheet->getStyle('L'.$pos_consignee_tel_fax.':Q'.$pos_consignee_tel_fax)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
+                                    
                                     $sheet->getRowDimension($pos_consignee_tel_fax)->setRowHeight(16.5);
 
 

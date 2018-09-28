@@ -700,7 +700,7 @@ function setItemReferSuppliers(data, flag) {
 				$('.DSP_dest_country_nm').text(!jQuery.isEmptyObject(data) ? data.deliverye_country_nm : '');
 
 	 			changeNmCombobox(data.client_country_div);
-	 			// calTotalTaxAmt();
+	 			calTotalTaxAmt();
 	 			calTotalAmt();
 	 			setItemCustCountryDiv(data.client_country_div);
 

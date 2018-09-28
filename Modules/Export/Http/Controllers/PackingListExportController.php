@@ -447,12 +447,16 @@ class PackingListExportController extends Controller
                                 $sheet->setCellValue('I'.$posTF, 'Tel: ');
                                 $sheet->getStyle('I'.$posTF)->applyFromArray(getStyleExcel('fontBold'));
                                 $sheet->mergeCells('J'.$posTF.':K'.$posTF);
-                                $sheet->setCellValue('J'.$posTF, $header['company_tel']);
+                                //$sheet->setCellValue('J'.$posTF, $header['company_tel']);
+                                $sheet->getCell('J'.$posTF)->setValueExplicit($header['company_tel'], \PHPExcel_Cell_DataType::TYPE_STRING);
+                                $sheet->getStyle('J'.$posTF)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
                                 // set Fax
                                 $sheet->setCellValue('L'.$posTF, 'Fax: ');
                                 $sheet->getStyle('L'.$posTF)->applyFromArray(getStyleExcel('fontBold'));
                                 $sheet->mergeCells('M'.$posTF.':Q'.$posTF);
-                                $sheet->setCellValue('M'.$posTF, $header['company_fax']);
+                                //$sheet->setCellValue('M'.$posTF, $header['company_fax']);
+                                $sheet->getCell('M'.$posTF)->setValueExplicit($header['company_fax'], \PHPExcel_Cell_DataType::TYPE_STRING);
+                                $sheet->getStyle('M'.$posTF)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
                                 // set Email
                                 $posEU   =   $pos+2;
                                 $sheet->setCellValue('I'.$posEU, 'Email : ');
@@ -558,7 +562,9 @@ class PackingListExportController extends Controller
                                 //set Tel
                                 $posCustTel     =  $pos+8;
                                 $sheet->setCellValue('D'.$posCustTel, 'Tel');
-                                $sheet->setCellValue('E'.$posCustTel, $inv_no_h['cust_tel']);
+                                //$sheet->setCellValue('E'.$posCustTel, $inv_no_h['cust_tel']);
+                                $sheet->getCell('E'.$posCustTel)->setValueExplicit($inv_no_h['cust_tel'], \PHPExcel_Cell_DataType::TYPE_STRING);
+                                $sheet->getStyle('E'.$posCustTel)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
                                 $sheet->mergeCells('E'.$posCustTel.':F'.$posCustTel);
                                 $sheet->getStyle('D'.$posCustTel)->applyFromArray(getStyleExcel('fontBold'));
                                 $sheet->cells('E'.$posCustTel.':F'.$posCustTel, function($cells) {
@@ -569,7 +575,9 @@ class PackingListExportController extends Controller
 
                                 //set Fax
                                 $sheet->setCellValue('G'.$posCustTel, 'Fax');
-                                $sheet->setCellValue('H'.$posCustTel, $inv_no_h['cust_fax']);
+                                //$sheet->setCellValue('H'.$posCustTel, $inv_no_h['cust_fax']);
+                                $sheet->getCell('H'.$posCustTel)->setValueExplicit($inv_no_h['cust_fax'], \PHPExcel_Cell_DataType::TYPE_STRING);
+                                $sheet->getStyle('H'.$posCustTel)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
                                 $sheet->mergeCells('H'.$posCustTel.':J'.$posCustTel);
                                 $sheet->getStyle('G'.$posCustTel)->applyFromArray(getStyleExcel('fontBold'));
                                 $sheet->getStyle('D'.$posTo.':K'.$posMerg)->applyFromArray(getStyleExcel('styleOutlineBorder'));
@@ -668,13 +676,17 @@ class PackingListExportController extends Controller
                                 //set Tel
                                 $posConsTel     =  $pos+13;
                                 $sheet->setCellValue('D'.$posConsTel, 'Tel');
-                                $sheet->setCellValue('E'.$posConsTel, $inv_no_h['consignee_tel']);
+                                //$sheet->setCellValue('E'.$posConsTel, $inv_no_h['consignee_tel']);
+                                $sheet->getCell('E'.$posConsTel)->setValueExplicit($inv_no_h['consignee_tel'], \PHPExcel_Cell_DataType::TYPE_STRING);
+                                $sheet->getStyle('E'.$posConsTel)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
                                 $sheet->mergeCells('E'.$posConsTel.':F'.$posConsTel);
                                 $sheet->getStyle('D'.$posConsTel)->applyFromArray(getStyleExcel('fontBold'));
 
                                 //set Fax
                                 $sheet->setCellValue('G'.$posConsTel, 'Fax');
-                                $sheet->setCellValue('H'.$posConsTel, $inv_no_h['consignee_fax']);
+                                //$sheet->setCellValue('H'.$posConsTel, $inv_no_h['consignee_fax']);
+                                $sheet->getCell('H'.$posConsTel)->setValueExplicit($inv_no_h['consignee_fax'], \PHPExcel_Cell_DataType::TYPE_STRING);
+                                $sheet->getStyle('H'.$posConsTel)->getNumberFormat()->setFormatCode(\PHPExcel_Style_NumberFormat::FORMAT_TEXT);
                                 $sheet->mergeCells('H'.$posConsTel.':K'.$posConsTel);
                                 $sheet->getStyle('G'.$posConsTel)->applyFromArray(getStyleExcel('fontBold'));
                                 $sheet->getStyle('D'.$posCons.':K'.$posConsMer)->applyFromArray(getStyleExcel('styleOutlineBorder'));

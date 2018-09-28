@@ -1,14 +1,15 @@
 <div class="input-group popup" data-id="order_cd" data-nm="order_nm" data-search="order" data-istable="{{ $istable or 0}}" data-multi="{{ $multi or 0 }}">
 
 	<input {{isset($is_disabled) && $is_disabled ?'readonly':''}} 
-			type      = "text" 
+			type      = "text"
+			name 	  ="{{ isset($class_cd)?$class_cd:'' }}" 
 			class     = "form-control left-radius right-radius refer-search order_cd 
 					    {{ isset($class_tab) ? $class_tab : '' }} 
 					    {{ isset($is_required) && $is_required ? 'required' : '' }}
-					    {{ $disabled_ime or '' }}"
+					    {{ $disabled_ime or '' }} {{ isset($class_cd)?$class_cd:'' }}"
 			value     = "{{ $val or '' }}" 
 			id        = "{{ $id or '' }}"
-			maxlength = "10">
+			maxlength = "14">
 
 	<span class="input-group-btn">
 		<button {{isset($is_disabled) && $is_disabled ?'disabled':''}} 

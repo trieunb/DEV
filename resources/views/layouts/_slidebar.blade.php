@@ -54,6 +54,8 @@
 
 							<li><a href="/stocking/stocking-detail">@lang('menu.stocking-detail')</a></li>
 
+							<li><a href="/stocking/stocking-search">仕入一覧</a></li>
+
 							<li><a href="/manufactureinstruction/manufacturing-instruction-report">@lang('menu.manufacturing-instruction-report')</a></li>
 
 							<li><a href="/manufactureinstruction/manufacturing-instruction-search">@lang('menu.manufacturing-instruction-search')</a></li>

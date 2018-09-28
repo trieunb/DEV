@@ -26,7 +26,7 @@ return [
     'selling-unit-price-by-client-detaill'    =>  '顧客別製品単価マスタメンテナンス',
     'selling-unit-price-by-client-search'     =>  '顧客別製品単価マスタ一覧',
     
-    'pi-detail'                               =>  'PI(見積伝票)作成',
+    'pi-detail'                               =>  'PI-受注登録',
     'pi-search'                               =>  'PI(見積)伝票一覧',
     
     'accept-detail'                           =>  '受注入力',

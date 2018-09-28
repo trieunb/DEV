@@ -12,7 +12,14 @@
 	<span class="input-group-btn">
 		<button {{isset($is_disabled) && $is_disabled ?'disabled':''}} type="button" class="btn btn-primary btn-icon btn-search"><i class="icon-search4"></i></button>
 	</span>
+
 	@if(!isset($is_nm) || (isset($is_nm) && $is_nm != false))
-	<span class="input-group-text suppliers_nm client_nm {{ isset($class_nm)?$class_nm:'' }}"></span>
+		<span class="input-group-text suppliers_nm client_nm {{ isset($class_nm)?$class_nm:'' }}"></span>
 	@endif
 </div>
+
+@if(isset($is_btn_clear) && $is_btn_clear)
+	<span class="input-group-btn" style="position: absolute; right: 0px; top: 0;">
+		<button type="button" class="btn btn-primary btn-icon btn-clear-info" style=" border-radius: 3px;">クリア</button>
+	</span>
+@endif

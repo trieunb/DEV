@@ -15,7 +15,7 @@
 	@if(!isset($is_nm) || (isset($is_nm) && $is_nm != false))
 	<div id="contain-name">
 		<span class="text-overfollow refer-search componentproduct_nm"></span>
-		<span class="text-overfollow refer-search DSP_specification"></span>
+		<span class="text-overfollow refer-search specification"></span>
 	</div>
 	@endif
 </div>
